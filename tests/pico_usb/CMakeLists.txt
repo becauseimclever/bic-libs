@@ -9,4 +9,4 @@ pico_sdk_init()
 include("${CMAKE_CURRENT_LIST_DIR}/../../bic_libs_import.cmake")
 add_executable(bic_usb_pico_smoke main.c)
 target_link_libraries(bic_usb_pico_smoke PRIVATE pico_stdlib
-    bic_usb_xinput bic_usb_dinput bic_usb_keyboard bic_usb_mouse)
+    bic_usb_xinput bic_usb_dinput bic_usb_keyboard bic_usb_mouse bic_nes_snes)

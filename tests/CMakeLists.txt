@@ -19,3 +19,6 @@ add_executable(usb_protocol_test usb_protocol_test.c
     ../src/usb_device/dinput.c ../src/usb_device/keyboard.c ../src/usb_device/mouse.c)
 target_include_directories(usb_protocol_test PRIVATE ../src/usb_device/include)
 add_test(NAME usb_protocol_test COMMAND usb_protocol_test)
+add_executable(nes_snes_test nes_snes_test.c ../src/nes_snes/reader.c ../src/nes_snes/emulator.c)
+target_include_directories(nes_snes_test PRIVATE stubs ../src/nes_snes/include)
+add_test(NAME nes_snes_test COMMAND nes_snes_test ${CMAKE_CURRENT_LIST_DIR}/../src/nes_snes/nes_snes_output.pio)

@@ -1,0 +1,26 @@
+; Adapted from CHIRBot; Copyright (c) 2026 Darren, MIT; see third_party/CHIRBot/LICENSE.
+.program nes_snes_output
+.wrap_target
+    pull block
+    mov x, osr
+latch:
+    pull noblock
+    mov x, osr
+    out pins, 1
+    jmp pin latch
+clock_low:
+    jmp pin latch
+    mov isr, null
+    in pins, 1
+    mov y, isr
+    jmp !y clock_high
+    jmp clock_low
+clock_high:
+    jmp pin latch
+    mov isr, null
+    in pins, 1
+    mov y, isr
+    jmp !y clock_high
+    out pins, 1
+    jmp clock_low
+.wrap
