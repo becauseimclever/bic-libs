@@ -1,0 +1,5 @@
+add_executable(bic_drv8833_example motor_shim.c)
+target_link_libraries(bic_drv8833_example PRIVATE bic_drv8833 pico_stdlib)
+pico_enable_stdio_usb(bic_drv8833_example 1)
+pico_enable_stdio_uart(bic_drv8833_example 0)
+pico_add_extra_outputs(bic_drv8833_example)

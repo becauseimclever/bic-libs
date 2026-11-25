@@ -1,0 +1,5 @@
+add_executable(bic_a3144_example hall_sensor.c)
+target_link_libraries(bic_a3144_example PRIVATE bic_a3144 pico_stdlib)
+pico_enable_stdio_usb(bic_a3144_example 1)
+pico_enable_stdio_uart(bic_a3144_example 0)
+pico_add_extra_outputs(bic_a3144_example)

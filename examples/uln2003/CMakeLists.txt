@@ -1,0 +1,5 @@
+add_executable(bic_uln2003_example stepper.c)
+target_link_libraries(bic_uln2003_example PRIVATE bic_uln2003 pico_stdlib)
+pico_enable_stdio_usb(bic_uln2003_example 1)
+pico_enable_stdio_uart(bic_uln2003_example 0)
+pico_add_extra_outputs(bic_uln2003_example)
